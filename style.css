@@ -1,2147 +1,1030 @@
-
-
-/* ============================================================
-   GLOBAL DESIGN VARIABLES
-============================================================ */
+/* ============================================================ GLOBAL DESIGN VARIABLES ============================================================ */
 
 :root {
-    --background: #080b16;
-    --surface: #11182b;
-    --primary: #4f8cff;
-    --secondary: #a855f7;
-    --text: #f5f7ff;
-    --muted: #a4adc4;
-    --border: rgba(255, 255, 255, 0.10);
+  --background: #080b16;
+  --surface: #11182b;
+  --primary: #4f8cff;
+  --secondary: #a855f7;
+  --text: #f5f7ff;
+  --muted: #a4adc4;
+  --border: rgba(255, 255, 255, 0.1);
 }
 
-/* ============================================================
-   GLOBAL RESET AND PAGE BACKGROUND
-============================================================ */
+/* ============================================================ GLOBAL RESET AND PAGE BACKGROUND ============================================================ */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    min-height: 100vh;
-    font-family: 'Poppins', sans-serif;
-    color: var(--text);
-    background:
-        radial-gradient(circle at 15% 20%, rgba(79, 140, 255, 0.13), transparent 32%),
-        radial-gradient(circle at 85% 75%, rgba(168, 85, 247, 0.12), transparent 30%),
-        var(--background);
-    overflow-x: hidden;
-    line-height: 1.6;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  color: var(--text);
+  background: radial-gradient(
+      circle at 15% 20%,
+      rgba(79, 140, 255, 0.13),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 85% 75%,
+      rgba(168, 85, 247, 0.12),
+      transparent 30%
+    ),
+    var(--background);
+  overflow-x: hidden;
+  line-height: 1.6;
 }
 
-/* ============================================================
-   LINKS AND IMAGES
-============================================================ */
+/* ============================================================ LINKS AND IMAGES ============================================================ */
 
 a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 img {
-    display: block;
-    max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
 
-/* ============================================================
-   HERO MAIN LAYOUT
-============================================================ */
+/* ============================================================ HERO MAIN LAYOUT ============================================================ */
 
 .hero {
-    width: 100%;
-    min-height: 100vh;
-    max-width: 1450px;
-    margin: auto;
-    padding: 100px 8% 80px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 60px;
-    position: relative;
+  width: 100%;
+  min-height: 100vh;
+  max-width: 1450px;
+  margin: auto;
+  padding: 100px 8% 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  position: relative;
 }
 
-/* ============================================================
-   LEFT INTRODUCTION CONTENT
-============================================================ */
+/* ============================================================ LEFT INTRODUCTION CONTENT ============================================================ */
 
 .hero-content {
-    flex: 1;
-    max-width: 650px;
-    position: relative;
-    z-index: 2;
+  flex: 1;
+  max-width: 650px;
+  position: relative;
+  z-index: 2;
 }
 
 .eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 9px 16px;
-    margin-bottom: 28px;
-    border: 1px solid var(--border);
-    border-radius: 30px;
-    background: rgba(255, 255, 255, 0.035);
-    color: #c7d4f5;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 16px;
+  margin-bottom: 28px;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.035);
+  color: #c7d4f5;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
 }
 
 .status-dot {
-    width: 8px;
-    height: 8px;
-    display: inline-block;
-    border-radius: 50%;
-    background: #42e6a4;
-    box-shadow: 0 0 12px #42e6a4;
-    animation: pulse 2s infinite;
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  border-radius: 50%;
+  background: #42e6a4;
+  box-shadow: 0 0 12px #42e6a4;
+  animation: pulse 2s infinite;
 }
 
 .hero-greeting {
-    color: var(--muted);
-    font-size: 21px;
-    margin-bottom: 5px;
+  color: var(--muted);
+  font-size: 21px;
+  margin-bottom: 5px;
 }
 
 .hero h1 {
-    font-size: clamp(45px, 6vw, 76px);
-    font-weight: 800;
-    line-height: 1.15;
-    letter-spacing: -2px;
+  font-size: clamp(45px, 6vw, 76px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -2px;
 }
 
 .hero h1 span {
-    background: linear-gradient(90deg, var(--primary), var(--secondary));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .hero-title {
-    margin-top: 18px;
-    margin-bottom: 10px;
-    font-size: clamp(24px, 3.2vw, 38px);
-    font-weight: 700;
-    color: var(--primary);
+  margin-top: 18px;
+  margin-bottom: 10px;
+  font-size: clamp(24px, 3.2vw, 38px);
+  font-weight: 700;
+  color: var(--primary);
 }
 
 .typing-cursor {
-    color: var(--secondary);
-    font-weight: 400;
-    animation: blink 0.8s infinite;
+  color: var(--secondary);
+  font-weight: 400;
+  animation: blink 0.8s infinite;
 }
 
 .hero-role {
-    font-size: 15px;
-    font-weight: 600;
-    color: #c4b5fd;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #c4b5fd;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
 }
 
 .intro {
-    max-width: 570px;
-    color: var(--muted);
-    font-size: 15px;
-    line-height: 1.9;
-    margin-bottom: 30px;
+  max-width: 570px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 30px;
 }
 
-/* ============================================================
-   HERO BUTTONS
-============================================================ */
+/* ============================================================ HERO BUTTONS ============================================================ */
 
 .hero-buttons {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
 }
 
 .btn {
-    min-height: 50px;
-    padding: 13px 22px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    border-radius: 12px;
-    font-size: 13px;
-    font-weight: 600;
-    transition: 0.3s ease;
+  min-height: 50px;
+  padding: 13px 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.3s ease;
 }
 
 .btn.primary {
-    background: linear-gradient(100deg, var(--primary), var(--secondary));
-    color: white;
-    box-shadow: 0 8px 25px rgba(79, 140, 255, 0.25);
+  background: linear-gradient(100deg, var(--primary), var(--secondary));
+  color: white;
+  box-shadow: 0 8px 25px rgba(79, 140, 255, 0.25);
 }
 
 .btn.secondary {
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.04);
-    color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
 }
 
 .btn:hover {
-    transform: translateY(-4px);
+  transform: translateY(-4px);
 }
 
 .btn.primary:hover {
-    box-shadow: 0 12px 35px rgba(79, 140, 255, 0.4);
+  box-shadow: 0 12px 35px rgba(79, 140, 255, 0.4);
 }
 
 .btn.secondary:hover {
-    border-color: var(--primary);
-    background: rgba(79, 140, 255, 0.12);
+  border-color: var(--primary);
+  background: rgba(79, 140, 255, 0.12);
 }
 
-/* ============================================================
-   SOCIAL LINKS AND HIGHLIGHTS
-============================================================ */
+/* ============================================================ SOCIAL LINKS AND HIGHLIGHTS ============================================================ */
 
 .social-links {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 30px;
 }
 
 .social-links a {
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-    color: var(--muted);
-    font-size: 14px;
-    font-weight: 500;
-    transition: 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.3s ease;
 }
 
 .social-links a i {
-    font-size: 19px;
+  font-size: 19px;
 }
 
 .social-links a:hover {
-    color: var(--primary);
-    transform: translateY(-3px);
+  color: var(--primary);
+  transform: translateY(-3px);
 }
 
 .hero-highlights {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
 }
 
 .hero-highlights div {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--muted);
-    font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 13px;
 }
 
 .hero-highlights i {
-    color: var(--primary);
-    font-size: 17px;
+  color: var(--primary);
+  font-size: 17px;
 }
 
-/* ============================================================
-   RIGHT PROFILE VISUAL
-============================================================ */
+/* ============================================================ RIGHT PROFILE VISUAL ============================================================ */
 
 .hero-visual {
-    flex: 1;
-    min-width: 280px;
-    max-width: 490px;
-    height: 490px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+  flex: 1;
+  min-width: 280px;
+  max-width: 490px;
+  height: 490px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
-/* ============================================================
-   PROFILE PHOTO
-============================================================ */
+/* ============================================================ PROFILE PHOTO ============================================================ */
 
 .profile-avatar {
-    width: 310px;
-    height: 310px;
-    padding: 7px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    box-shadow:
-        0 0 35px rgba(79, 140, 255, 0.35),
-        0 0 85px rgba(168, 85, 247, 0.15);
-    position: relative;
-    z-index: 2;
+  width: 310px;
+  height: 310px;
+  padding: 7px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  box-shadow: 0 0 35px rgba(79, 140, 255, 0.35),
+    0 0 85px rgba(168, 85, 247, 0.15);
+  position: relative;
+  z-index: 2;
 }
 
 .profile-avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 50%;
-    border: 5px solid var(--background);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  border: 5px solid var(--background);
 }
 
-/* ============================================================
-   DECORATIVE ORBIT CIRCLES
-============================================================ */
+/* ============================================================ DECORATIVE ORBIT CIRCLES ============================================================ */
 
 .orbit {
-    position: absolute;
-    border-radius: 50%;
-    pointer-events: none;
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .orbit-one {
-    width: 390px;
-    height: 390px;
-    border: 1px solid rgba(79, 140, 255, 0.35);
-    animation: rotate 18s linear infinite;
+  width: 390px;
+  height: 390px;
+  border: 1px solid rgba(79, 140, 255, 0.35);
+  animation: rotate 18s linear infinite;
 }
 
 .orbit-two {
-    width: 450px;
-    height: 450px;
-    border: 1px dashed rgba(168, 85, 247, 0.35);
-    animation: rotate-reverse 25s linear infinite;
+  width: 450px;
+  height: 450px;
+  border: 1px dashed rgba(168, 85, 247, 0.35);
+  animation: rotate-reverse 25s linear infinite;
 }
 
-/* ============================================================
-   FLOATING INFORMATION BOXES
-   Keep both boxes outside the face area.
-============================================================ */
+/* ============================================================ FLOATING INFORMATION BOXES Keep both boxes outside the face area. ============================================================ */
 
 .floating-card {
-    position: absolute;
+  position: absolute;
 
-    /* Center the Learning & Building card below the photo. */
-    left: 50%;
-    right: auto;
-    top: auto;
-    bottom: 0;
+  /* Center the Learning & Building card below the photo. */
+  left: 50%;
+  right: auto;
+  top: auto;
+  bottom: 0;
 
-    transform: translateX(-50%);
+  transform: translateX(-50%);
 
-    display: flex;
-    align-items: center;
-    gap: 13px;
-    padding: 16px 20px;
-    border: 1px solid var(--border);
-    border-radius: 15px;
-    background: rgba(17, 24, 43, 0.95);
-    backdrop-filter: blur(15px);
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
-    z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 16px 20px;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  background: rgba(17, 24, 43, 0.95);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+  z-index: 3;
 
-    /* Animate vertically without changing the horizontal centering. */
-    animation: float-card 4s ease-in-out infinite;
+  /* Animate vertically without changing the horizontal centering. */
+  animation: float-card 4s ease-in-out infinite;
 }
 
 .floating-card > i {
-    color: #facc15;
-    font-size: 22px;
+  color: #facc15;
+  font-size: 22px;
 }
 
 .floating-card strong {
-    display: block;
-    color: var(--text);
-    font-size: 12px;
+  display: block;
+  color: var(--text);
+  font-size: 12px;
 }
 
 .floating-card small {
-    display: block;
-    color: var(--muted);
-    font-size: 10px;
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
 }
 
 .visual-tag {
-    position: absolute;
+  position: absolute;
 
-    /* Center the AM identity card above the photo. */
-    left: 50%;
-    right: auto;
-    top: 0;
-    bottom: auto;
+  /* Center the AM identity card above the photo. */
+  left: 50%;
+  right: auto;
+  top: 0;
+  bottom: auto;
 
-    transform: translateX(-50%);
+  transform: translateX(-50%);
 
-    padding: 13px 17px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    background: rgba(17, 24, 43, 0.95);
-    backdrop-filter: blur(12px);
-    z-index: 3;
+  padding: 13px 17px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(17, 24, 43, 0.95);
+  backdrop-filter: blur(12px);
+  z-index: 3;
 }
 
 .visual-tag span {
-    font-size: 22px;
-    font-weight: 800;
-    background: linear-gradient(90deg, var(--primary), var(--secondary));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+  font-size: 22px;
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .visual-tag small {
-    color: var(--muted);
-    font-size: 8px;
-    letter-spacing: 1px;
+  color: var(--muted);
+  font-size: 8px;
+  letter-spacing: 1px;
 }
 
-/* ============================================================
-   ANIMATIONS
-============================================================ */
+/* ============================================================ ANIMATIONS ============================================================ */
 
 @keyframes blink {
-    50% { opacity: 0; }
+  50% {
+    opacity: 0;
+  }
 }
 
 @keyframes pulse {
-    0%, 100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 0.5;
-        transform: scale(0.8);
-    }
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
 }
 
 /* This animation preserves the horizontal centering. */
 @keyframes float-card {
-    0%, 100% {
-        transform: translate(-50%, 0);
-    }
-    50% {
-        transform: translate(-50%, -8px);
-    }
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, -8px);
+  }
 }
 
 @keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes rotate-reverse {
-    from { transform: rotate(360deg); }
-    to { transform: rotate(0deg); }
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
 }
 
-/* ============================================================
-   TABLET RESPONSIVE DESIGN
-============================================================ */
+/* ============================================================ TABLET RESPONSIVE DESIGN ============================================================ */
 
 @media (max-width: 1000px) {
-    .hero {
-        padding-left: 5%;
-        padding-right: 5%;
-        gap: 30px;
-    }
+  .hero {
+    padding-left: 5%;
+    padding-right: 5%;
+    gap: 30px;
+  }
 
-    .profile-avatar {
-        width: 260px;
-        height: 260px;
-    }
+  .profile-avatar {
+    width: 260px;
+    height: 260px;
+  }
 
-    .orbit-one {
-        width: 330px;
-        height: 330px;
-    }
+  .orbit-one {
+    width: 330px;
+    height: 330px;
+  }
 
-    .orbit-two {
-        width: 380px;
-        height: 380px;
-    }
+  .orbit-two {
+    width: 380px;
+    height: 380px;
+  }
 
-    .hero-visual {
-        height: 420px;
-    }
+  .hero-visual {
+    height: 420px;
+  }
 }
 
-/* ============================================================
-   MOBILE RESPONSIVE DESIGN
-============================================================ */
+/* ============================================================ MOBILE RESPONSIVE DESIGN ============================================================ */
 
 @media (max-width: 700px) {
-    .hero {
-        min-height: auto;
-        padding: 85px 7% 70px;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 60px;
-    }
+  .hero {
+    min-height: auto;
+    padding: 85px 7% 70px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 60px;
+  }
 
-    .hero-content {
-        width: 100%;
-    }
+  .hero-content {
+    width: 100%;
+  }
 
-    .eyebrow {
-        font-size: 9px;
-        letter-spacing: 1px;
-    }
+  .eyebrow {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
 
-    .hero-greeting {
-        font-size: 17px;
-    }
+  .hero-greeting {
+    font-size: 17px;
+  }
 
-    .hero h1 {
-        font-size: 48px;
-        letter-spacing: -1px;
-    }
+  .hero h1 {
+    font-size: 48px;
+    letter-spacing: -1px;
+  }
 
-    .hero-title {
-        font-size: 25px;
-    }
+  .hero-title {
+    font-size: 25px;
+  }
 
-    .hero-role {
-        font-size: 12px;
-    }
+  .hero-role {
+    font-size: 12px;
+  }
 
-    .intro {
-        font-size: 13px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .intro {
+    font-size: 13px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    .hero-buttons {
-        justify-content: center;
-    }
+  .hero-buttons {
+    justify-content: center;
+  }
 
-    .btn {
-        font-size: 11px;
-        padding: 12px 15px;
-    }
+  .btn {
+    font-size: 11px;
+    padding: 12px 15px;
+  }
 
-    .social-links {
-        justify-content: center;
-    }
+  .social-links {
+    justify-content: center;
+  }
 
-    .hero-highlights {
-        justify-content: center;
-    }
+  .hero-highlights {
+    justify-content: center;
+  }
 
-    .hero-visual {
-        width: 100%;
-        min-width: 0;
-        height: 390px;
-    }
+  .hero-visual {
+    width: 100%;
+    min-width: 0;
+    height: 390px;
+  }
 
-    .profile-avatar {
-        width: 230px;
-        height: 230px;
-    }
+  .profile-avatar {
+    width: 230px;
+    height: 230px;
+  }
 
-    .orbit-one {
-        width: 290px;
-        height: 290px;
-    }
+  .orbit-one {
+    width: 290px;
+    height: 290px;
+  }
 
-    .orbit-two {
-        width: 330px;
-        height: 330px;
-    }
+  .orbit-two {
+    width: 330px;
+    height: 330px;
+  }
 
-    /* Keep the AM card above the portrait. */
-    .visual-tag {
-        top: 0;
-    }
+  /* Keep the AM card above the portrait. */
+  .visual-tag {
+    top: 0;
+  }
 
-    /* Keep the Learning card below the portrait. */
-    .floating-card {
-        bottom: 0;
-        padding: 12px;
-        max-width: 90%;
-    }
+  /* Keep the Learning card below the portrait. */
+  .floating-card {
+    bottom: 0;
+    padding: 12px;
+    max-width: 90%;
+  }
 }
 
-/* ============================================================
-   SMALL MOBILE SCREEN SUPPORT
-============================================================ */
+/* ============================================================ SMALL MOBILE SCREEN SUPPORT ============================================================ */
 
 @media (max-width: 380px) {
-    .hero {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
+  .hero {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 
-    .hero h1 {
-        font-size: 41px;
-    }
+  .hero h1 {
+    font-size: 41px;
+  }
 
-    .hero-title {
-        font-size: 21px;
-    }
+  .hero-title {
+    font-size: 21px;
+  }
 
-    .profile-avatar {
-        width: 200px;
-        height: 200px;
-    }
+  .profile-avatar {
+    width: 200px;
+    height: 200px;
+  }
 
-    .orbit-one {
-        width: 250px;
-        height: 250px;
-    }
+  .orbit-one {
+    width: 250px;
+    height: 250px;
+  }
 
-    .orbit-two {
-        width: 285px;
-        height: 285px;
-    }
+  .orbit-two {
+    width: 285px;
+    height: 285px;
+  }
 
-    .hero-visual {
-        height: 350px;
-    }
+  .hero-visual {
+    height: 350px;
+  }
 
-    .floating-card {
-        bottom: 0;
-        max-width: 95%;
-    }
+  .floating-card {
+    bottom: 0;
+    max-width: 95%;
+  }
 }
 
-/* ============================================================
-   ACCESSIBILITY
-============================================================ */
+/* ============================================================ ACCESSIBILITY ============================================================ */
 
 @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-    }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
 }
-
-
-
 
 /* Give the profile area more vertical room on mobile. */
 @media (max-width: 700px) {
+  .hero-visual {
+    height: 520px !important;
+    min-height: 520px;
+    overflow: visible;
+    position: relative;
+  }
 
-    .hero-visual {
-        height: 520px !important;
-        min-height: 520px;
-        overflow: visible;
-        position: relative;
-    }
+  /* Keep the profile photograph centered. */
+  .profile-avatar {
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+  }
 
-    /* Keep the profile photograph centered. */
-    .profile-avatar {
-        position: relative;
-        z-index: 2;
-        flex-shrink: 0;
-    }
+  /* Place the AM card above the photograph. */
+  .visual-tag {
+    top: 0;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    z-index: 4;
+  }
 
-    /* Place the AM card above the photograph. */
-    .visual-tag {
-        top: 0;
-        left: 50%;
-        right: auto;
-        bottom: auto;
-        z-index: 4;
-    }
-
-    /* Place the Learning card below the photograph. */
-    .floating-card {
-        bottom: 0;
-        left: 50%;
-        right: auto;
-        top: auto;
-        z-index: 4;
-        max-width: 90%;
-    }
+  /* Place the Learning card below the photograph. */
+  .floating-card {
+    bottom: 0;
+    left: 50%;
+    right: auto;
+    top: auto;
+    z-index: 4;
+    max-width: 90%;
+  }
 }
 
 /* Give extra room on very narrow Android screens too. */
 @media (max-width: 380px) {
+  .hero-visual {
+    height: 520px !important;
+    min-height: 520px;
+  }
 
-    .hero-visual {
-        height: 520px !important;
-        min-height: 520px;
-    }
+  .profile-avatar {
+    width: 200px;
+    height: 200px;
+  }
 
-    .profile-avatar {
-        width: 200px;
-        height: 200px;
-    }
-
-    .floating-card {
-        max-width: 95%;
-    }
+  .floating-card {
+    max-width: 95%;
+  }
 }
 
-
-
-
-/* ============================================================
-   PREMIUM NAVIGATION BAR
-   ============================================================ */
+/* ============================================================ PREMIUM NAVIGATION BAR ============================================================ */
 
 /* Main navigation container */
 .navbar {
-    width: 100%;
-    min-height: 85px;
-    padding: 18px 7%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    z-index: 1000;
-    background: rgba(8, 10, 22, 0.92);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(15px);
+  width: 100%;
+  min-height: 85px;
+  padding: 18px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1000;
+  background: rgba(8, 10, 22, 0.92);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
 }
 
 /* Logo area */
 .nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
 }
 
 /* Gradient AM logo */
 .logo-mark {
-    width: 43px;
-    height: 43px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 13px;
-    color: white;
-    font-size: 17px;
-    font-weight: 800;
-    background: linear-gradient(135deg, #4f8cff, #a855f7);
-    box-shadow: 0 0 20px rgba(111, 90, 255, 0.3);
+  width: 43px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 13px;
+  color: white;
+  font-size: 17px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #4f8cff, #a855f7);
+  box-shadow: 0 0 20px rgba(111, 90, 255, 0.3);
 }
 
 /* Name beside the logo */
 .logo-name {
-    color: #ffffff;
-    font-size: 19px;
-    font-weight: 700;
+  color: #ffffff;
+  font-size: 19px;
+  font-weight: 700;
 }
 
 /* Desktop navigation links */
 .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 32px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
 }
 
 /* Individual navigation links */
 .nav-link {
-    color: #aeb6ca;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
-    transition: color 0.3s ease;
+  color: #aeb6ca;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 /* Link hover and active effects */
 .nav-link:hover,
 .nav-link.active {
-    color: #8b78ff;
+  color: #8b78ff;
 }
 
 /* Mobile menu button - hidden on desktop */
 .menu-toggle {
-    display: none;
-    width: 42px;
-    height: 42px;
-    padding: 9px;
-    flex-direction: column;
-    justify-content: center;
-    gap: 6px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 10px;
-    background: transparent;
-    cursor: pointer;
+  display: none;
+  width: 42px;
+  height: 42px;
+  padding: 9px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
 }
 
 /* Three lines of the mobile menu icon */
 .menu-toggle span {
-    width: 100%;
-    height: 2px;
-    display: block;
-    border-radius: 5px;
-    background: #ffffff;
+  width: 100%;
+  height: 2px;
+  display: block;
+  border-radius: 5px;
+  background: #ffffff;
 }
 
-/* ============================================================
-   MOBILE NAVIGATION
-   ============================================================ */
+/* ============================================================ MOBILE NAVIGATION ============================================================ */
 
 @media (max-width: 768px) {
+  /* Reduce navigation spacing on mobile */
+  .navbar {
+    min-height: 75px;
+    padding: 15px 5%;
+  }
 
-    /* Reduce navigation spacing on mobile */
-    .navbar {
-        min-height: 75px;
-        padding: 15px 5%;
-    }
+  /* Slightly reduce logo text size */
+  .logo-name {
+    font-size: 17px;
+  }
 
-    /* Slightly reduce logo text size */
-    .logo-name {
-        font-size: 17px;
-    }
+  /* Display the mobile menu button */
+  .menu-toggle {
+    display: flex;
+  }
 
-    /* Display the mobile menu button */
-    .menu-toggle {
-        display: flex;
-    }
+  /* Hide the menu until the user opens it */
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 22px 5%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+    background: #0b0d1b;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
 
-    /* Hide the menu until the user opens it */
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        padding: 22px 5%;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 22px;
-        background: #0b0d1b;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
+  /* Show menu when JavaScript adds the open class */
+  .nav-links.open {
+    display: flex;
+  }
 
-    /* Show menu when JavaScript adds the open class */
-    .nav-links.open {
-        display: flex;
-    }
-
-    /* Make mobile links easier to tap */
-    .nav-link {
-        width: 100%;
-        font-size: 16px;
-    }
+  /* Make mobile links easier to tap */
+  .nav-link {
+    width: 100%;
+    font-size: 16px;
+  }
 }
 
-
-
-
-/* ============================================================
-   PREMIUM EDUCATION SECTION
-   ============================================================ */
+/* ============================================================ PREMIUM EDUCATION SECTION ============================================================ */
 
 /* Main Education section */
 .education-section {
-    position: relative;
-    width: 100%;
-    padding: 110px 8%;
-    background: #090b18;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 110px 8%;
+  background: #090b18;
+  overflow: hidden;
 }
 
 /* Education section heading */
 .education-section .section-heading {
-    max-width: 700px;
-    margin: 0 auto 65px;
-    text-align: center;
+  max-width: 700px;
+  margin: 0 auto 65px;
+  text-align: center;
 }
 
 /* Small heading above the title */
 .education-section .section-eyebrow {
-    color: #8b78ff;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    margin-bottom: 15px;
+  color: #8b78ff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
 }
 
 /* Main Education title */
 .education-section .section-heading h2 {
-    color: #ffffff;
-    font-size: clamp(32px, 5vw, 48px);
-    font-weight: 800;
-    margin-bottom: 18px;
+  color: #ffffff;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 800;
+  margin-bottom: 18px;
 }
 
 /* Gradient text for Education */
 .education-section .section-heading h2 span {
-    background: linear-gradient(135deg, #4f8cff, #a855f7);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+  background: linear-gradient(135deg, #4f8cff, #a855f7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 /* Description under the title */
 .education-section .section-heading > p:last-child {
-    color: #aeb6ca;
-    font-size: 16px;
-    line-height: 1.8;
+  color: #aeb6ca;
+  font-size: 16px;
+  line-height: 1.8;
 }
 
 /* Timeline container */
 .education-timeline {
-    position: relative;
-    max-width: 850px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+  position: relative;
+  max-width: 850px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 /* Vertical timeline line */
 .education-timeline::before {
-    content: "";
-    position: absolute;
-    top: 35px;
-    bottom: 35px;
-    left: 35px;
-    width: 2px;
-    background: linear-gradient(
-        to bottom,
-        #4f8cff,
-        #a855f7,
-        transparent
-    );
+  content: "";
+  position: absolute;
+  top: 35px;
+  bottom: 35px;
+  left: 35px;
+  width: 2px;
+  background: linear-gradient(to bottom, #4f8cff, #a855f7, transparent);
 }
 
 /* Individual education cards */
 .education-card {
-    position: relative;
-    display: flex;
-    align-items: flex-start;
-    gap: 25px;
-    padding: 30px;
-    background: rgba(19, 23, 45, 0.85);
-    border: 1px solid rgba(139, 120, 255, 0.18);
-    border-radius: 20px;
-    backdrop-filter: blur(12px);
-    transition: transform 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  padding: 30px;
+  background: rgba(19, 23, 45, 0.85);
+  border: 1px solid rgba(139, 120, 255, 0.18);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 /* Card hover effect */
 .education-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(139, 120, 255, 0.7);
+  transform: translateY(-6px);
+  border-color: rgba(139, 120, 255, 0.7);
 }
 
 /* Education icon container */
 .education-icon {
-    position: relative;
-    z-index: 1;
-    min-width: 70px;
-    width: 70px;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 18px;
-    font-size: 30px;
-    background: linear-gradient(135deg, #273c85, #633a9e);
-    box-shadow: 0 0 25px rgba(111, 90, 255, 0.2);
+  position: relative;
+  z-index: 1;
+  min-width: 70px;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 30px;
+  background: linear-gradient(135deg, #273c85, #633a9e);
+  box-shadow: 0 0 25px rgba(111, 90, 255, 0.2);
 }
 
 /* Education details */
 .education-details {
-    flex: 1;
-    min-width: 0;
+  flex: 1;
+  min-width: 0;
 }
 
 /* Status label */
 .education-status {
-    display: inline-block;
-    margin-bottom: 12px;
-    color: #9b8aff;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 2px;
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #9b8aff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
 }
 
 /* Qualification title */
 .education-details h3 {
-    color: #ffffff;
-    font-size: 23px;
-    font-weight: 750;
-    margin-bottom: 10px;
+  color: #ffffff;
+  font-size: 23px;
+  font-weight: 750;
+  margin-bottom: 10px;
 }
 
 /* Institution name */
 .education-details h4 {
-    color: #c1c9df;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 1.6;
-    margin-bottom: 8px;
+  color: #c1c9df;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.6;
+  margin-bottom: 8px;
 }
 
 /* Additional education information */
 .education-details p {
-    color: #929db7;
-    font-size: 14px;
-    line-height: 1.8;
+  color: #929db7;
+  font-size: 14px;
+  line-height: 1.8;
 }
 
 /* Description for university education */
 .education-description {
-    margin-top: 12px;
+  margin-top: 12px;
 }
 
 /* Academic marks */
 .education-marks {
-    color: #8d9fff !important;
-    font-weight: 700;
-    margin-top: 12px;
+  color: #8d9fff !important;
+  font-weight: 700;
+  margin-top: 12px;
 }
 
-/* ============================================================
-   MOBILE EDUCATION DESIGN
-   ============================================================ */
+/* ============================================================ MOBILE EDUCATION DESIGN ============================================================ */
 
 @media (max-width: 768px) {
+  /* Reduce section spacing on mobile */
+  .education-section {
+    padding: 80px 5%;
+  }
 
-    /* Reduce section spacing on mobile */
-    .education-section {
-        padding: 80px 5%;
-    }
+  /* Reduce heading bottom spacing */
+  .education-section .section-heading {
+    margin-bottom: 45px;
+  }
 
-    /* Reduce heading bottom spacing */
-    .education-section .section-heading {
-        margin-bottom: 45px;
-    }
+  /* Adjust timeline line position */
+  .education-timeline::before {
+    left: 24px;
+  }
 
-    /* Adjust timeline line position */
-    .education-timeline::before {
-        left: 24px;
-    }
+  /* Reduce card spacing and padding */
+  .education-card {
+    gap: 16px;
+    padding: 20px 15px;
+    border-radius: 16px;
+  }
 
-    /* Reduce card spacing and padding */
-    .education-card {
-        gap: 16px;
-        padding: 20px 15px;
-        border-radius: 16px;
-    }
+  /* Reduce icon size */
+  .education-icon {
+    min-width: 48px;
+    width: 48px;
+    height: 48px;
+    font-size: 23px;
+    border-radius: 13px;
+  }
 
-    /* Reduce icon size */
-    .education-icon {
-        min-width: 48px;
-        width: 48px;
-        height: 48px;
-        font-size: 23px;
-        border-radius: 13px;
-    }
+  /* Reduce qualification title size */
+  .education-details h3 {
+    font-size: 19px;
+  }
 
-    /* Reduce qualification title size */
-    .education-details h3 {
-        font-size: 19px;
-    }
+  /* Adjust institution text */
+  .education-details h4 {
+    font-size: 14px;
+  }
 
-    /* Adjust institution text */
-    .education-details h4 {
-        font-size: 14px;
-    }
+  /* Adjust supporting text */
+  .education-details p {
+    font-size: 13px;
+  }
 
-    /* Adjust supporting text */
-    .education-details p {
-        font-size: 13px;
-    }
-
-    /* Reduce status label size */
-    .education-status {
-        font-size: 9px;
-        letter-spacing: 1.3px;
-    }
+  /* Reduce status label size */
+  .education-status {
+    font-size: 9px;
+    letter-spacing: 1.3px;
+  }
 }
 
-
-
-
-/* ============================================================
-   PREMIUM ABOUT ME SECTION
-   ============================================================ */
+/* ============================================================ PREMIUM ABOUT ME SECTION ============================================================ */
 
 /* Main About section */
 .about-section {
-    width: 100%;
-    padding: 110px 8%;
-    position: relative;
-    background: #0b0d1b;
-    overflow: hidden;
-}
-
-/* About section heading */
-.about-section .section-heading {
-    max-width: 700px;
-    margin: 0 auto 65px;
-    text-align: center;
-}
-
-/* Small section label */
-.about-section .section-eyebrow {
-    color: #8b78ff;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    margin-bottom: 15px;
-}
-
-/* Main heading */
-.about-section .section-heading h2 {
-    color: #ffffff;
-    font-size: clamp(32px, 5vw, 48px);
-    font-weight: 800;
-    margin-bottom: 15px;
-}
-
-/* Gradient heading text */
-.about-section .section-heading h2 span {
-    background: linear-gradient(135deg, #4f8cff, #a855f7);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-/* Heading description */
-.about-section .section-heading > p:last-child {
-    color: #aeb6ca;
-    font-size: 16px;
-    line-height: 1.8;
-}
-
-/* Main two-column layout */
-.about-container {
-    max-width: 1150px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 55px;
-    align-items: center;
-}
-
-/* Introduction greeting */
-.about-greeting {
-    color: #8b78ff;
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 15px;
-}
-
-/* Introduction heading */
-.about-content h3 {
-    color: #ffffff;
-    font-size: clamp(25px, 3vw, 36px);
-    line-height: 1.4;
-    font-weight: 800;
-    margin-bottom: 22px;
-}
-
-/* About description */
-.about-description {
-    color: #aeb6ca;
-    font-size: 15px;
-    line-height: 1.9;
-    margin-bottom: 15px;
-}
-
-/* Interest tags container */
-.about-interests {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 25px 0;
-}
-
-/* Individual interest tags */
-.about-interests span {
-    padding: 9px 14px;
-    color: #c8c4ff;
-    font-size: 12px;
-    font-weight: 600;
-    border: 1px solid rgba(139, 120, 255, 0.3);
-    background: rgba(139, 120, 255, 0.08);
-    border-radius: 30px;
-}
-
-/* Explore projects button */
-.about-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 13px 22px;
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 700;
-    text-decoration: none;
-    border-radius: 10px;
-    background: linear-gradient(135deg, #4f8cff, #8b5cf6);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Button hover effect */
-.about-button:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(111, 90, 255, 0.3);
-}
-
-/* Arrow inside the button */
-.about-button span {
-    font-size: 20px;
-}
-
-/* Highlight cards container */
-.about-highlights {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-}
-
-/* Individual highlight card */
-.highlight-card {
-    padding: 23px;
-    border-radius: 17px;
-    background: rgba(19, 23, 45, 0.85);
-    border: 1px solid rgba(139, 120, 255, 0.18);
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-/* Highlight card hover effect */
-.highlight-card:hover {
-    transform: translateX(7px);
-    border-color: rgba(139, 120, 255, 0.7);
-}
-
-/* Highlight icon */
-.highlight-icon {
-    display: inline-block;
-    font-size: 28px;
-    margin-bottom: 12px;
-}
-
-/* Highlight card title */
-.highlight-card h4 {
-    color: #ffffff;
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 8px;
-}
-
-/* Highlight card description */
-.highlight-card p {
-    color: #929db7;
-    font-size: 13px;
-    line-height: 1.8;
-}
-
-/* ============================================================
-   MOBILE ABOUT SECTION
-   ============================================================ */
-
-@media (max-width: 768px) {
-
-    /* Reduce section padding */
-    .about-section {
-        padding: 80px 5%;
-    }
-
-    /* Stack columns vertically */
-    .about-container {
-        grid-template-columns: 1fr;
-        gap: 35px;
-    }
-
-    /* Reduce heading spacing */
-    .about-section .section-heading {
-        margin-bottom: 40px;
-    }
-
-    /* Adjust introduction heading */
-    .about-content h3 {
-        font-size: 27px;
-    }
-
-    /* Adjust paragraph size */
-    .about-description {
-        font-size: 14px;
-    }
-
-    /* Reduce highlight card padding */
-    .highlight-card {
-        padding: 20px;
-    }
-}
-
-
-
-
-/* ==========================================================
-   PREMIUM SKILLS SECTION
-   ========================================================== */
-
-/* Main Skills section */
-.skills-section {
-    position: relative;
-    padding: 110px 8%;
-    background: linear-gradient(180deg, #080d1b, #0b1220);
-    overflow: hidden;
-}
-
-/* Section heading container */
-.skills-section .section-heading {
-    text-align: center;
-    max-width: 750px;
-    margin: 0 auto 65px;
-}
-
-/* Small heading label */
-.skills-section .section-eyebrow {
-    color: #38bdf8;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    margin-bottom: 14px;
-}
-
-/* Main heading */
-.skills-section .section-heading h2 {
-    color: #ffffff;
-    font-size: clamp(32px, 5vw, 48px);
-    font-weight: 800;
-    margin-bottom: 18px;
-}
-
-/* Gradient heading text */
-.skills-section .section-heading h2 span {
-    background: linear-gradient(90deg, #38bdf8, #a78bfa);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-/* Heading description */
-.skills-section .section-heading > p:last-child {
-    color: #a5b4c8;
-    font-size: 16px;
-    line-height: 1.8;
-}
-
-/* Skills cards grid */
-.skills-container {
-    max-width: 1150px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 25px;
-}
-
-/* Individual skill card */
-.skill-card {
-    position: relative;
-    padding: 32px;
-    background: rgba(20, 32, 55, 0.65);
-    border: 1px solid rgba(56, 189, 248, 0.16);
-    border-radius: 20px;
-    backdrop-filter: blur(12px);
-    transition: transform 0.35s ease,
-                border-color 0.35s ease,
-                box-shadow 0.35s ease;
-}
-
-/* Card hover effect */
-.skill-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(56, 189, 248, 0.65);
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.3);
-}
-
-/* Number icon */
-.skill-icon {
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 14px;
-    color: #38bdf8;
-    background: rgba(56, 189, 248, 0.12);
-    font-size: 15px;
-    font-weight: 800;
-    margin-bottom: 22px;
-}
-
-/* Skill card title */
-.skill-card h3 {
-    color: #ffffff;
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 12px;
-}
-
-/* Skill card description */
-.skill-card p {
-    color: #a5b4c8;
-    font-size: 14px;
-    line-height: 1.8;
-    margin-bottom: 22px;
-}
-
-/* Skill tags container */
-.skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-/* Individual skill tags */
-.skill-tags span {
-    padding: 9px 14px;
-    border-radius: 30px;
-    color: #bae6fd;
-    background: rgba(56, 189, 248, 0.1);
-    border: 1px solid rgba(56, 189, 248, 0.2);
-    font-size: 12px;
-    font-weight: 600;
-}
-
-/* Learning statement */
-.skills-note {
-    margin-top: 50px;
-    text-align: center;
-    color: #38bdf8;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 1px;
-}
-
-/* ==========================================================
-   MOBILE RESPONSIVE DESIGN
-   ========================================================== */
-
-@media (max-width: 768px) {
-
-    /* Reduce section spacing on mobile */
-    .skills-section {
-        padding: 75px 6%;
-    }
-
-    /* Reduce heading spacing */
-    .skills-section .section-heading {
-        margin-bottom: 40px;
-    }
-
-    /* Display one card per row */
-    .skills-container {
-        grid-template-columns: 1fr;
-        gap: 18px;
-    }
-
-    /* Adjust card padding */
-    .skill-card {
-        padding: 25px;
-    }
-
-    /* Adjust card title */
-    .skill-card h3 {
-        font-size: 20px;
-    }
-
-    /* Adjust tag spacing */
-    .skill-tags {
-        gap: 8px;
-    }
-
-    /* Adjust learning statement */
-    .skills-note {
-        line-height: 1.8;
-        font-size: 12px;
-    }
-}
-
-
-
-
-/* ==========================================================
-   PREMIUM PROJECTS SECTION
-   ========================================================== */
-
-/* Main Projects section */
-.projects-section {
-    position: relative;
-    padding: 110px 8%;
-    background: #080d1b;
-    overflow: hidden;
-}
-
-/* Projects section heading */
-.projects-section .section-heading {
-    max-width: 750px;
-    margin: 0 auto 65px;
-    text-align: center;
-}
-
-/* Small heading label */
-.projects-section .section-eyebrow {
-    color: #38bdf8;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    margin-bottom: 14px;
-}
-
-/* Main heading */
-.projects-section .section-heading h2 {
-    color: #ffffff;
-    font-size: clamp(32px, 5vw, 48px);
-    font-weight: 800;
-    margin-bottom: 18px;
-}
-
-/* Gradient heading text */
-.projects-section .section-heading h2 span {
-    background: linear-gradient(90deg, #38bdf8, #a78bfa);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-/* Heading description */
-.projects-section .section-heading > p:last-child {
-    color: #a5b4c8;
-    font-size: 16px;
-    line-height: 1.8;
-}
-
-/* Projects grid */
-.projects-container {
-    max-width: 1150px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 25px;
-}
-
-/* Individual project card */
-.project-card {
-    position: relative;
-    padding: 32px;
-    background: rgba(20, 32, 55, 0.65);
-    border: 1px solid rgba(56, 189, 248, 0.16);
-    border-radius: 20px;
-    backdrop-filter: blur(12px);
-    transition: transform 0.35s ease,
-                border-color 0.35s ease,
-                box-shadow 0.35s ease;
-}
-
-/* Project card hover effect */
-.project-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(56, 189, 248, 0.65);
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.3);
-}
-
-/* Project number */
-.project-number {
-    color: #38bdf8;
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    margin-bottom: 25px;
-}
-
-/* Project icon */
-.project-icon {
-    width: 58px;
-    height: 58px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 16px;
-    background: rgba(56, 189, 248, 0.12);
-    font-size: 27px;
-    margin-bottom: 22px;
-}
-
-/* Project title */
-.project-card h3 {
-    color: #ffffff;
-    font-size: 21px;
-    font-weight: 700;
-    line-height: 1.5;
-    margin-bottom: 14px;
-}
-
-/* Project description */
-.project-card p {
-    color: #a5b4c8;
-    font-size: 14px;
-    line-height: 1.9;
-    margin-bottom: 22px;
-}
-
-/* Project tags container */
-.project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 9px;
-    margin-bottom: 25px;
-}
-
-/* Individual project tags */
-.project-tags span {
-    padding: 8px 12px;
-    border-radius: 30px;
-    color: #bae6fd;
-    background: rgba(56, 189, 248, 0.1);
-    border: 1px solid rgba(56, 189, 248, 0.2);
-    font-size: 11px;
-    font-weight: 600;
-}
-
-/* Project status */
-.project-status {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    color: #94a3b8;
-    font-size: 12px;
-    font-weight: 600;
-}
-
-/* Project status indicator */
-.status-dot {
-    width: 8px;
-    height: 8px;
-    flex-shrink: 0;
-    border-radius: 50%;
-    background: #38bdf8;
-    box-shadow: 0 0 10px rgba(56, 189, 248, 0.7);
-}
-
-/* Projects closing statement */
-.projects-note {
-    max-width: 700px;
-    margin: 50px auto 0;
-    text-align: center;
-    color: #38bdf8;
-    font-size: 14px;
-    line-height: 1.8;
-    font-weight: 600;
-}
-
-/* ==========================================================
-   MOBILE RESPONSIVE DESIGN
-   ========================================================== */
-
-@media (max-width: 768px) {
-
-    /* Reduce section spacing */
-    .projects-section {
-        padding: 75px 6%;
-    }
-
-    /* Adjust heading spacing */
-    .projects-section .section-heading {
-        margin-bottom: 40px;
-    }
-
-    /* One project card per row */
-    .projects-container {
-        grid-template-columns: 1fr;
-        gap: 18px;
-    }
-
-    /* Adjust card padding */
-    .project-card {
-        padding: 25px;
-    }
-
-    /* Adjust project title */
-    .project-card h3 {
-        font-size: 19px;
-    }
-
-    /* Adjust project icon */
-    .project-icon {
-        width: 52px;
-        height: 52px;
-        font-size: 24px;
-    }
-
-    /* Adjust closing statement */
-    .projects-note {
-        font-size: 12px;
-    }
-}
-
-
-
-
-/* ==========================================================
-   PREMIUM CONTACT SECTION
-   ========================================================== */
-
-/* Main Contact section */
-.contact-section {
-    position: relative;
-    padding: 110px 8%;
-    background: linear-gradient(180deg, #080d1b, #0b1220);
-    overflow: hidden;
-}
-
-/* Contact heading */
-.contact-section .section-heading {
-    max-width: 750px;
-    margin: 0 auto 65px;
-    text-align: center;
-}
-
-/* Small heading label */
-.contact-section .section-eyebrow {
-    color: #38bdf8;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    margin-bottom: 14px;
-}
-
-/* Main heading */
-.contact-section .section-heading h2 {
-    color: #ffffff;
-    font-size: clamp(32px, 5vw, 48px);
-    font-weight: 800;
-    margin-bottom: 18px;
-}
-
-/* Gradient heading text */
-.contact-section .section-heading h2 span {
-    background: linear-gradient(90deg, #38bdf8, #a78bfa);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-/* Heading description */
-.contact-section .section-heading > p:last-child {
-    color: #a5b4c8;
-    font-size: 16px;
-    line-height: 1.8;
-}
-
-/* Contact cards grid */
-.contact-container {
-    max-width: 1150px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-}
-
-/* Individual contact card */
-.contact-card {
-    display: block;
-    padding: 30px;
-    min-width: 0;
-    text-decoration: none;
-    background: rgba(20, 32, 55, 0.65);
-    border: 1px solid rgba(56, 189, 248, 0.16);
-    border-radius: 20px;
-    backdrop-filter: blur(12px);
-    transition: transform 0.35s ease,
-                border-color 0.35s ease,
-                box-shadow 0.35s ease;
-}
-
-/* Contact card hover effect */
-a.contact-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(56, 189, 248, 0.65);
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.3);
-}
-
-/* Contact icon */
-.contact-icon {
-    width: 55px;
-    height: 55px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 16px;
-    background: rgba(56, 189, 248, 0.12);
-    color: #38bdf8;
-    font-size: 25px;
-    font-weight: 800;
-    margin-bottom: 22px;
-}
-
-/* Contact title */
-.contact-card h3 {
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-/* Contact description */
-.contact-card p {
-    color: #a5b4c8;
-    font-size: 13px;
-    line-height: 1.8;
-    margin-bottom: 18px;
-    overflow-wrap: anywhere;
-}
-
-/* Contact action text */
-.contact-action {
-    display: inline-block;
-    color: #38bdf8;
-    font-size: 12px;
-    font-weight: 700;
-}
-
-/* Location card */
-.location-card {
-    cursor: default;
-}
-
-/* Contact closing message */
-.contact-message {
-    max-width: 750px;
-    margin: 75px auto 0;
-    text-align: center;
-    padding: 35px 25px;
-    border-top: 1px solid rgba(56, 189, 248, 0.2);
-}
-
-/* Closing message heading */
-.contact-message h3 {
-    color: #ffffff;
-    font-size: 25px;
-    font-weight: 800;
-    margin-bottom: 14px;
-}
-
-/* Closing message paragraph */
-.contact-message p {
-    color: #a5b4c8;
-    font-size: 14px;
-    line-height: 1.9;
-}
-
-/* ==========================================================
-   TABLET RESPONSIVE DESIGN
-   ========================================================== */
-
-@media (max-width: 950px) {
-
-    /* Display two cards per row on tablets */
-    .contact-container {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-/* ==========================================================
-   MOBILE RESPONSIVE DESIGN
-   ========================================================== */
-
-@media (max-width: 600px) {
-
-    /* Reduce Contact section spacing */
-    .contact-section {
-        padding: 75px 6%;
-    }
-
-    /* Adjust heading spacing */
-    .contact-section .section-heading {
-        margin-bottom: 40px;
-    }
-
-    /* Display one contact card per row */
-    .contact-container {
-        grid-template-columns: 1fr;
-        gap: 17px;
-    }
-
-    /* Adjust contact card padding */
-    .contact-card {
-        padding: 24px;
-    }
-
-    /* Adjust contact icon */
-    .contact-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 22px;
-    }
-
-    /* Adjust closing message */
-    .contact-message {
-        margin-top: 50px;
-        padding: 25px 10px;
-    }
-
-    .contact-message h3 {
-        font-size: 21px;
-    }
-}
-
-
-
-/* ============================================================
-   FLOATING WHATSAPP BUTTON CSS
-   Premium fixed WhatsApp contact button
-   ============================================================ */
-
-/* Main floating WhatsApp button */
-.floating-whatsapp {
-    position: fixed;
-    right: 25px;
-    bottom: 25px;
-    z-index: 9999;
-
-    width: 62px;
-    height: 62px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: #ffffff;
-    background: linear-gradient(135deg, #25D366, #128C7E);
-
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 50%;
-
-    box-shadow: 0 8px 28px rgba(37, 211, 102, 0.35);
-
-    text-decoration: none;
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-/* WhatsApp icon size */
-.floating-whatsapp svg {
-    width: 34px;
-    height: 34px;
-}
-
-/* Hover animation for desktop users */
-.floating-whatsapp:hover {
-    transform: translateY(-5px) scale(1.08);
-    box-shadow: 0 12px 35px rgba(37, 211, 102, 0.5);
-}
-
-/* Visible keyboard focus for accessibility */
-.floating-whatsapp:focus-visible {
-    outline: 3px solid #ffffff;
-    outline-offset: 5px;
-}
-
-/* Mobile responsive positioning */
-@media (max-width: 600px) {
-
-    .floating-whatsapp {
-        width: 56px;
-        height: 56px;
-
-        right: 18px;
-        bottom: 20px;
-    }
-
-    .floating-whatsapp svg {
-        width: 30px;
-        height: 30px;
-    }
-}
-
-/* ============================================================
-   END FLOATING WHATSAPP BUTTON CSS
-   ============================================================ */
-
-
-
-/* ============================================================
-   PREMIUM PORTFOLIO FOOTER CSS
-   ============================================================ */
-
-/* Main footer background and spacing */
-.premium-footer {
-    position: relative;
-    padding: 65px 8% 25px;
-    margin-top: 80px;
-
-    background: linear-gradient(
-        135deg,
-        #080d1b,
-        #101a30,
-        #080d1b
-    );
-
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-/* Footer columns layout */
-.footer-container {
-    max-width: 1200px;
-    margin: auto;
-
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 50px;
-}
-
-/* Footer brand logo */
-.footer-logo {
-    display: inline-block;
-    margin-bottom: 15px;
-
-    color: #ffffff;
-    font-size: 32px;
-    font-weight: 800;
-    text-decoration: none;
-
-    background: linear-gradient(90deg, #38bdf8, #a78bfa);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* Footer name */
-.footer-brand h3 {
-    color: #ffffff;
-    font-size: 21px;
-    margin-bottom: 10px;
-}
-
-/* Footer descriptive text */
-.footer-brand p {
-    color: #a8b4ca;
-    line-height: 1.8;
-    font-size: 14px;
-}
-
-/* Location spacing */
-.footer-location {
-    margin-top: 12px;
-}
-
-/* Footer column headings */
-.footer-links h4,
-.footer-social h4 {
-    color: #ffffff;
-    font-size: 17px;
-    margin-bottom: 20px;
-}
-
-/* Footer navigation and social links */
-.footer-links a,
-.footer-social a {
-    display: block;
-    width: fit-content;
-
-    color: #a8b4ca;
-    font-size: 14px;
-    text-decoration: none;
-
-    margin-bottom: 13px;
-
-    transition: color 0.3s ease,
-                transform 0.3s ease;
-}
-
-/* Hover effects for footer links */
-.footer-links a:hover,
-.footer-social a:hover {
-    color: #38bdf8;
-    transform: translateX(5px);
-}
-
-/* Copyright and Back to Top row */
-.footer-bottom {
-    max-width: 1200px;
-    margin: 45px auto 0;
-    padding-top: 22px;
-
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-/* Copyright text */
-.footer-bottom p {
-    color: #8794aa;
-    font-size: 13px;
-}
-
-/* Back to Top button */
-.back-to-top {
-    color: #38bdf8;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-
-    transition: color 0.3s ease,
-                transform 0.3s ease;
-}
-
-.back-to-top:hover {
-    color: #a78bfa;
-    transform: translateY(-3px);
-}
-
-/* Tablet layout */
-@media (max-width: 900px) {
-
-    .footer-container {
-        grid-template-columns: 1fr 1fr;
-        gap: 35px;
-    }
-
-    .footer-brand {
-        grid-column: 1 / -1;
-    }
-}
-
-/* Mobile layout */
-@media (max-width: 600px) {
-
-    .premium-footer {
-        padding: 45px 7% 22px;
-        margin-top: 55px;
-    }
-
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .footer-brand {
-        grid-column: auto;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-top: 30px;
-        gap: 15px;
-    }
-}
-
-/* ============================================================
-   END PREMIUM PORTFOLIO FOOTER CSS
-   ============================================================ */
-
+  width: 100%;
+  padding: 110px 8%;
+  position: relative;
+ 
