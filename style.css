@@ -1028,3 +1028,164 @@ img {
   padding: 110px 8%;
   position: relative;
  
+
+/* ============================================================
+   PREMIUM TEACHING EXPERIENCE SECTION
+   Matches the existing Education section design.
+   ============================================================ */
+
+/* Main Experience section */
+.experience-section {
+    position: relative;
+    width: 100%;
+    padding: 110px 8%;
+    background: #090b18;
+    overflow: hidden;
+}
+
+/* Experience section heading */
+.experience-section .section-heading {
+    max-width: 700px;
+    margin: 0 auto 65px;
+    text-align: center;
+}
+
+/* Small heading above the title */
+.experience-section .section-eyebrow {
+    color: #8b78ff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+/* Main Experience title */
+.experience-section .section-heading h2 {
+    color: #ffffff;
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 800;
+    margin-bottom: 18px;
+}
+
+/* Gradient title text */
+.experience-section .section-heading h2 span {
+    background: linear-gradient(135deg, #4f8cff, #a855f7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Heading description */
+.experience-section .section-heading > p:last-child {
+    color: #aeb6ca;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* Experience cards container */
+.experience-container {
+    position: relative;
+    max-width: 850px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Individual experience cards */
+.experience-card {
+    position: relative;
+    padding: 30px;
+    background: rgba(19, 23, 45, 0.85);
+    border: 1px solid rgba(139, 120, 255, 0.18);
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    transition: transform 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* Premium hover effect */
+.experience-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(139, 120, 255, 0.7);
+    box-shadow: 0 12px 35px rgba(79, 140, 255, 0.12);
+}
+
+/* Job position title */
+.experience-card h3 {
+    color: #ffffff;
+    font-size: 23px;
+    font-weight: 750;
+    margin-bottom: 10px;
+}
+
+/* Institution name */
+.experience-card h4 {
+    color: #c1c9df;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+/* Experience descriptions */
+.experience-card p {
+    color: #929db7;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* Employment dates */
+.experience-date {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #9b8aff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+/* ============================================================
+   MOBILE EXPERIENCE DESIGN
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    /* Reduce section spacing */
+    .experience-section {
+        padding: 80px 5%;
+    }
+
+    /* Adjust heading spacing */
+    .experience-section .section-heading {
+        margin-bottom: 45px;
+    }
+
+    /* Adjust card padding */
+    .experience-card {
+        padding: 20px 15px;
+        border-radius: 16px;
+    }
+
+    /* Reduce job title size */
+    .experience-card h3 {
+        font-size: 19px;
+    }
+
+    /* Adjust institution name */
+    .experience-card h4 {
+        font-size: 14px;
+    }
+
+    /* Adjust description text */
+    .experience-card p {
+        font-size: 13px;
+    }
+
+    /* Reduce date label size */
+    .experience-date {
+        font-size: 9px;
+        letter-spacing: 1.3px;
+    }
+}
